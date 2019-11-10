@@ -1,4 +1,4 @@
-#### I have a file name as testfile.txt with the following contents and I'm going to use the awk command to manipulating data.
+#### I have a file name as testfile.txt with the following contents and I'm going to use the awk command to manipulate data.
 
 ```
 root@tuttu-Inspiron:~# cat test.txt
