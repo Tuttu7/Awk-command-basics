@@ -61,17 +61,17 @@ Testing 1
 root@tuttu-Inspiron:~# awk '/^[0-9]/ { print }' test.txt 
 123 Testing
 ```
-### Grab every line that end with numbers :
+#### Grab every line that end with numbers :
 ```
 root@tuttu-Inspiron:~# awk '/[0-9]$/ { print }' test.txt 
 Testing 1
 ```
-### Grab every line that first coulmn mataches with value 123 :
+#### Grab every line that first coulmn mataches with value 123 :
 ```
 root@tuttu-Inspiron:~# awk '{if ($1 ~ /123/) print}' test.txt 
 123 Testing
 ```
-### I'm adding more contents to my testfile.txt to illustrate the -F: parameterin the awk comand
+#### I'm adding more contents to my testfile.txt to illustrate the -F: parameterin the awk comand
 ```
 root@tuttu-Inspiron:~# cat test.txt
 Frank: neymar
@@ -79,7 +79,7 @@ Testing 1: testing1
 Hello World: Hi world
 TesT: Testing
 ```
-### Overiding white spaces by adding -F: parameter 
+#### Overiding white spaces by adding -F: parameter 
 ```
 root@tuttu-Inspiron:~# awk -F: '{ print $2 }' test.txt 
  neymar
