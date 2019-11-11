@@ -35,7 +35,7 @@ World
 
 Testing
 ```
-#### Printing the value named as Test in the given file :
+#### Printing the line with the word "Test" in the given file :
 ```
 root@tuttu-Inspiron:~# awk '/Test/ { print }' test.txt
 Testing 1
