@@ -71,7 +71,7 @@ Testing 1
 root@tuttu-Inspiron:~# awk '{if ($1 ~ /123/) print}' test.txt 
 123 Testing
 ```
-#### I'm adding more contents to my testfile.txt to illustrate the -F: parameterin the awk comand
+#### I'm adding more contents to my testfile.txt to illustrate the -F: parameter in the awk comand
 ```
 root@tuttu-Inspiron:~# cat test.txt
 Frank: neymar
@@ -118,7 +118,7 @@ test,red,white,black,1000,2
 yrc,bkm,apple,cake,880,1
 Total,8880 73
 ```
-### To find the count of entries repeated in every column :
+#### To find the count of entries repeated in every column :
 ```
 $ awk -F, '{a[$1]++;}END{for(i in a)print i, a[i];}' test.txt 
 123 1
