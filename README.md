@@ -87,3 +87,49 @@ root@tuttu-Inspiron:~# awk -F: '{ print $2 }' test.txt
  Hi world
  Testing
  ```
+ #### Example 2 :
+#### My testfile.txt contents :
+```
+~$ cat test.txt
+test,red,white,black,1000,2
+123,758,brown,large,3000,3
+300,400,700,800,4000,67
+test,bkm,apple,cake,880,1
+```
+#### Printing line only with the values 400 and brown :
+```
+$ awk '/400|brown/' test.txt
+123,758,brown,large
+300,400,700,800
+```
+#### Adding the contents in the specific column and add the total :
+```
+$ awk -F "," '{x+=$2} END { print x }' test.txt
+1158
+~$ awk -F "," '{x+=$5} END { print x }' test.txt 
+8000
+```
+#### Adding the contents in the specific column and displaying the total :
+```
+$ awk -F"," '{x+=$5;y+=$6;print} END{print"Total,"x,y}' test.txt
+test,red,white,black,1000,2
+123,758,brown,large,3000,3
+300,400,700,800,4000,67
+yrc,bkm,apple,cake,880,1
+Total,8880 73
+```
+### To find the count of entries repeated in every column :
+```
+$ awk -F, '{a[$1]++;}END{for(i in a)print i, a[i];}' test.txt 
+123 1
+300 1
+test 2
+```
+#### In this exapmle the word 'test' is occuring twice so using this command test is displsyed only once by rejecting the second occurance.
+```
+$ awk -F, '!a[$1]++' test.txt
+test,red,white,black,1000,2
+123,758,brown,large,3000,3
+300,400,700,800,4000,67
+```
+ 
